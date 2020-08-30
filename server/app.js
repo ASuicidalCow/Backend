@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import moongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 import { userController } from './controller';
 
@@ -15,8 +15,10 @@ app.use('/', userController);
 
 // Start Server Here
 app.listen(8080, () => {
+  // eslint-disable-next-line no-console
   console.log('Server is running on port 8080!');
-  moongoose.connect('mongodb://localhost/test').then(() => {
+  mongoose.connect('mongodb://localhost/test').then(() => {
+    // eslint-disable-next-line no-console
     console.log('connected to mongoDB at port 27017');
   });
 });

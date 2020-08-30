@@ -2,8 +2,8 @@ import { Schema } from 'mongoose';
 import sha256 from 'sha256';
 
 const userSchema = new Schema({
-  hashedPassword: { type: String, required: true },
-  email: { type: String, required: true },
+  email: { type: String },
+  hashedPassword: { type: String },
 });
 
 /**
